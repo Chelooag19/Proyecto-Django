@@ -1,0 +1,25 @@
+# Entornos virtuales
+.venv/
+env/
+ENV/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+
+# Base de datos
+*.sqlite3
+
+# Archivos de logs
+*.log
+
+# Archivos de VSCode
+.vscode/
+
+# Migraciones innecesarias
+**/migrations/__pycache__/
+**/migrations/*.pyc
+
+# Archivos estáticos generados
+/staticfiles/
+media/

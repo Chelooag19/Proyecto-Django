@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Mis Citas{% endblock %}
+{% block content %}
+<h2>Mis Citas</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Duración</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cita in citas %}
+        <tr>
+            <td>{{ cita.servicio }}</td>
+            <td>{{ cita.fecha }}</td>
+            <td>{{ cita.hora }}</td>
+            <td>{{ cita.duracion }}</td>
+            <td>
+                <form method="post" action="{% url 'cancelar_cita' cita.id %}">
+                    {% csrf_token %}
+                    <button class="btn btn-danger btn-sm">Cancelar</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">No hay citas agendadas.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

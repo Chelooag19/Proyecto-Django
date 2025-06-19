@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Panel Cliente{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+ 
+  <div class="col-md-6 text-center">
+    <h2 class="mb-4">Bienvenido al Panel del Cliente</h2>
+
+    <div class="d-grid gap-3">
+      <a href="{% url 'registrar_vehiculo' %}" class="btn btn-outline-primary btn-lg shadow">Registrar Vehículo</a>
+      <a href="{% url 'registrar_cita' %}" class="btn btn-outline-success btn-lg shadow">Agendar Cita</a>
+      <a href="{% url 'mis_citas' %}" class="btn btn-outline-warning btn-lg shadow">Mis Citas</a>
+    </div>
+  </div>
+
+  
+  <div class="col-md-6 text-center mt-4 mt-md-0">
+    <img src="{% static 'images/publicidad_carswash.png' %}" alt="Promo Cliente" class="img-fluid rounded shadow">
+    
+  </div>
+</div>
+{% endblock %}

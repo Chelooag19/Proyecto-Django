@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}Agendar Cita{% endblock %}
+
+{% block content %}
+<h2>Agendar Cita</h2>
+<div class="row">
+    
+    <div class="col-md-6">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Agendar</button>
+        </form>
+    </div>
+
+    
+    <div class="col-md-6 text-center">
+        <h5>Servicios disponibles</h5>
+        <img src="{% static 'images/servicios_lista.png' %}" alt="Servicios" class="img-fluid rounded shadow">
+        
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Panel Cliente{% endblock %}
+{% block content %}
+<h2>Panel del Cliente</h2>
+<div class="list-group">
+    <a href="{% url 'registrar_cliente' %}" class="list-group-item list-group-item-action">Registrar datos personales</a>
+    <a href="{% url 'registrar_vehiculo' %}" class="list-group-item list-group-item-action">Registrar vehículo</a>
+    <a href="{% url 'registrar_cita' %}" class="list-group-item list-group-item-action">Agendar cita</a>
+    <a href="{% url 'mis_citas' %}" class="list-group-item list-group-item-action">Ver / Cancelar mis citas</a>
+</div>
+{% endblock %}

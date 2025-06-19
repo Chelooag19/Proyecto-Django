@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Panel Empleado{% endblock %}
+
+{% block content %}
+<div class="row align-items-center">
+ 
+  <div class="col-md-6 text-center">
+    <h2 class="mb-4">Panel del Empleado</h2>
+    <a href="{% url 'todas_las_citas' %}" class="btn btn-lg btn-success shadow-sm px-5 py-3">
+      Ver todas las citas
+    </a>
+  </div>
+
+  
+  <div class="col-md-6 text-center">
+    <img src="{% static 'images/publicidad_carswash.png' %}" alt="Publicidad" class="img-fluid rounded shadow">
+    
+  </div>
+</div>
+{% endblock %}

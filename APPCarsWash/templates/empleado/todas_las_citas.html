@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Todas las Citas{% endblock %}
+{% block content %}
+<h2>Todas las Citas</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Vehículo</th>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Observaciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cita in citas %}
+        <tr>
+            <td>{{ cita.cliente.user.username }}</td>
+            <td>{{ cita.vehiculo.marca }} {{ cita.vehiculo.tipo }} - {{ cita.vehiculo.patente }}</td>
+            <td>{{ cita.servicio }}</td>
+            <td>{{ cita.fecha }}</td>
+            <td>{{ cita.hora }}</td>
+             <td>{{ cita.observaciones|default:"-" }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">No hay citas registradas.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
